@@ -1,0 +1,91 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" routerLink="/home">
+      🏥 SIDDHINATH HOSPITALS
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav me-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/docdas">
+            Dashboard
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/create-medicine">
+            Add Medicine
+          </a>
+        </li>
+
+        
+
+      </ul>
+
+      <button class="btn btn-danger" (click)="logout()">
+        Logout
+      </button>
+
+    </div>
+
+  </div>
+</nav>
+
+<div class="container mt-4">
+
+    <h2 class="text-center mb-4">
+        Medicine Inventory
+    </h2>
+
+    <table class="table table-striped table-bordered">
+
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Drug Name</th>
+                <th>Stock</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let medicine of medicines">
+                <td>{{ medicine.id }}</td>
+                <td>{{ medicine.drugName }}</td>
+                <td>{{ medicine.stock }}</td>
+                <td>
+                  <button
+                    type="submit"
+                    class="btn btn-info"
+                    (click)="update(medicine.id!)">
+                    Update
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="submit"
+                    class="btn btn-danger"
+                    (click)="delete(medicine.id!)"
+                    style="margin-left:10px">
+                    Delete
+                  </button>
+                </td>
+
+               
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

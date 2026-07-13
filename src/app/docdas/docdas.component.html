@@ -1,0 +1,100 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" routerLink="/home">
+      SIDDHINATH HOSPITALS
+    </a>
+
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav me-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/create-patient">
+            Add Patient
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/view-medicine">
+            View Medicines
+          </a>
+        </li>
+
+      </ul>
+
+      <button class="btn btn-danger" (click)="logout()">
+        Logout
+      </button>
+
+    </div>
+
+  </div>
+</nav>
+
+<div class="container">
+
+  <hr>
+
+  <h2 class="text-center mt-3">
+    Doctor Dashboard
+  </h2>
+
+  <marquee class="text-secondary fs-5">
+    Welcome to Doctor Dashboard.
+    Please find the patient list below.
+  </marquee>
+
+  <hr>
+
+  <h3 class="mb-4">
+    Current Patient List
+  </h3>
+
+  <table class="table table-striped table-bordered">
+
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Dose</th>
+        <th>Prescription</th>
+        <th>Blood Type</th>
+        <th>Urgency</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let patient of patients">
+
+        <td>{{ patient.id }}</td>
+        <td>{{ patient.name }}</td>
+        <td>{{ patient.age }}</td>
+        <td>{{ patient.dose }}</td>
+        <td>{{ patient.presciption }}</td>
+        <td>{{ patient.blood }}</td>
+        <td>{{ patient.urgency }}</td>
+
+        <td>
+          <button
+            class="btn btn-danger btn-sm"
+            (click)="delete(patient.id)">
+            Delete
+          </button>
+          <button class="btn btn-success" (click)="view(patient.id)" style="margin-left:10px" >View</button>
+        </td>
+
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>

@@ -1,0 +1,144 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" routerLink="/docdas">
+      🏥 SIDDHINATH HOSPITAL
+    </a>
+
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav me-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/docdas">
+            Home
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/create-patient">
+            Add Patient
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/docdas">
+            Back
+          </a>
+        </li>
+
+      </ul>
+
+      
+    </div>
+
+  </div>
+</nav>
+
+<div class="container mt-4">
+
+    <h2 class="text-center mb-4">Add New Patient</h2>
+
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group mb-3">
+            <label>Name</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter patient name"
+                class="form-control"
+                [(ngModel)]="patient.name">
+        </div>
+
+        <div class="form-group mb-3">
+            <label>Age</label>
+            <input
+                type="text"
+                id="age"
+                name="age"
+                placeholder="Enter age"
+                class="form-control"
+                [(ngModel)]="patient.age">
+        </div>
+
+        <div class="form-group mb-3">
+            <label>Blood Group</label>
+            <input
+                type="text"
+                id="blood"
+                name="blood"
+                placeholder="Enter blood group"
+                class="form-control"
+                [(ngModel)]="patient.blood">
+        </div>
+
+        <div class="form-group mb-3">
+            <label>Prescription</label>
+            <input
+                type="text"
+                id="presciption"
+                name="presciption"
+                placeholder="Enter prescription"
+                class="form-control"
+                [(ngModel)]="patient.presciption">
+        </div>
+
+        <div class="form-group mb-3">
+            <label>Dose</label>
+            <input
+                type="text"
+                id="dose"
+                name="dose"
+                placeholder="Enter dose"
+                class="form-control"
+                [(ngModel)]="patient.dose">
+        </div>
+
+        <div class="form-group mb-3">
+            <label>Fees</label>
+            <input
+                type="text"
+                id="fees"
+                name="fees"
+                placeholder="Enter consultation fees"
+                class="form-control"
+                [(ngModel)]="patient.fees">
+        </div>
+
+        <div class="form-group mb-4">
+            <label>Urgency</label>
+            <select
+                id="urgency"
+                name="urgency"
+                class="form-control"
+                [(ngModel)]="patient.urgency">
+
+                <option value="">Select Urgency</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+
+            </select>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-success me-2">
+                Save Patient
+            </button>
+
+            <button type="reset" class="btn btn-secondary">
+                Reset
+            </button>
+        </div>
+
+    </form>
+
+</div>
