@@ -8,7 +8,7 @@ import { Medicine } from './medicine';
 })
 export class MedicineService {
 
-  private baseUrl = "http://localhost:8080/api/v3/medicines";
+ private baseUrl = "https://hospital-management-system-backend-production-9785.up.railway.app/api/v3/medicines";
 
   constructor(private httpClient: HttpClient) { }
 
